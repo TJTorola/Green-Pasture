@@ -1,0 +1,49 @@
+const webpack = require('webpack');
+const path = require('path');
+
+const ROOT = path.resolve(__dirname);
+const DST_DIR = path.join(ROOT, 'dst');
+const SRC_DIR = path.join(ROOT, 'src');
+const JS_DIR = path.join(SRC_DIR, 'js');
+const STATIC_DIR = path.join(SRC_DIR, 'static');
+
+const config = {
+  entry: {
+    Pasture: './src/js/index.jsx',
+  },
+  output: {
+    path: DST_DIR,
+    filename: '[name].js',
+    libraryTarget: 'umd',
+    library: '[name]'
+  },
+  resolve: {
+    alias: {
+      '~': JS_DIR,
+    },
+    extensions: ['.js', '.jsx'],
+  },
+  module: {
+    rules: [
+      {
+        test: /\.jsx?$/,
+        exclude: [/node_modules/],
+        use: ['babel-loader'],
+      },
+    ],
+  },
+  devServer: {
+    contentBase: STATIC_DIR,
+    historyApiFallback: { index: 'index.html' },
+    disableHostCheck: true,
+    overlay: true,
+    stats: {
+      chunks: false,
+      colors: true,
+    },
+    port: process.env.WEB_PORT || 3000
+  },
+  devtool: 'source-map',
+};
+
+module.exports = config;
