@@ -1,6 +1,6 @@
 {
   "name": "pasture",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "Green pasture for a frontend web application",
   "main": "index.js",
   "author": "Tyler Torola <tyler@tjt.codes>",
@@ -10,7 +10,8 @@
     "build": "webpack --mode production",
     "deploy": "node ./bin/deploy.js",
     "test": "jest",
-    "precommit": "pretty-quick --staged"
+    "precommit": "pretty-quick --staged",
+    "postversion": "yarn run build && yarn run deploy"
   },
   "dependencies": {
     "babel-core": "^6.26.0",
