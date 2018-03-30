@@ -1,6 +1,6 @@
 {
   "name": "pasture",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "Green pasture for a frontend web application",
   "main": "index.js",
   "author": "Tyler Torola <tyler@tjt.codes>",
