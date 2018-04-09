@@ -1,9 +1,9 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
+import { render, h } from "preact";
 
-import App from '~/app';
+import App from "~/app";
 
-export const main = () => {
-  // Mount the application into #app
-  ReactDOM.render(<App />, document.getElementById('app'));
+export const main = (appId = "app") => {
+  // Mount the application into appId
+  const appEl = document.getElementById("app");
+  render(<App />, appEl, appEl.children[0]);
 };
