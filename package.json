@@ -32,7 +32,7 @@
     "react-redux": "^5.0.7",
     "react-router": "^4.2.0",
     "redux": "^3.7.2",
-    "redux-logger": "^3.0.6",
+    "redux-logger": "^1.0.9",
     "redux-thunk": "^2.2.0",
     "reselect": "^3.0.1",
     "webpack": "^4.3.0",
